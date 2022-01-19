@@ -1,6 +1,5 @@
 package com.kms.api.requests;
 
-import com.kms.api.model.LaptopBag;
 import com.kms.api.tests.TestBase;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -16,10 +15,30 @@ public class RequestFactory extends TestBase {
    * @param requestPayload
    * @return Response of the request
    */
-  public static Response addProduct(String path, LaptopBag requestPayload) {
+  public static Response addProduct(String path, Object requestPayload) {
     logger.info("Adding new product.");
     Response res = RestClient.doPostRequestWithPayload(path, ContentType.JSON, requestPayload);
     logger.info(String.format("The request for adding the product completed"));
     return res;
+  }
+
+  /**
+   * Send request to update an existing product
+   *
+   * @param requestPayload
+   * @return Response of the request
+   */
+  public static Response updateProduct(String path, Object requestPayload) {
+    return null;
+  }
+
+  /**
+   * Send request to update an existing product
+   *
+   * @param path
+   * @return Response of the request
+   */
+  public static Response deleteProduct(String path) {
+    return null;
   }
 }

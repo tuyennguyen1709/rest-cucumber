@@ -65,11 +65,11 @@ public class RestClient extends TestBase {
    * Perform Put request with params and no request payload
    *
    * @param requestPath the endpoint
-   * @param params list of params
+   * @param contentType list of params
    * @return the response of the Put request
    */
-  public static Response doPutRequestWithParamsAndPayload(
-      String requestPath, Map<String, String> params, ContentType contentType, Object body) {
+  public static Response doPutRequestWithPayload(
+      String requestPath, ContentType contentType, Object body) {
     return null;
   }
 
@@ -77,11 +77,9 @@ public class RestClient extends TestBase {
    * Perform Delete request with params and headers
    *
    * @param requestPath the endpoint
-   * @param params list of params
    * @return the response of the Delete request
    */
-  public static Response doDeleteRequestWithParams(
-      String requestPath, Map<String, String> params, ContentType contentType) {
+  public static Response doDeleteRequestWithParams(String requestPath) {
     return null;
   }
 }
