@@ -68,20 +68,40 @@ public class RestClient extends TestBase {
    * @param params list of params
    * @return the response of the Put request
    */
-  public static Response doPutRequestWithParamsAndPayload(
-      String requestPath, Map<String, String> params, ContentType contentType, Object body) {
-    return null;
+  public static Response doPutRequestWithPayload(
+      String requestPath, ContentType contentType, Object body) {
+    return given()
+            .log()
+            .everything()
+            .contentType(contentType)
+            .accept(contentType)
+            .body(body)
+            .when()
+            .put(requestPath)
+            .then()
+            .log()
+            .all()
+            .extract()
+            .response();
   }
 
   /**
    * Perform Delete request with params and headers
    *
    * @param requestPath the endpoint
-   * @param params list of params
    * @return the response of the Delete request
    */
   public static Response doDeleteRequestWithParams(
-      String requestPath, Map<String, String> params, ContentType contentType) {
-    return null;
+      String requestPath) {
+    return given()
+            .log()
+            .everything()
+            .when()
+            .delete(requestPath)
+            .then()
+            .log()
+            .all()
+            .extract()
+            .response();
   }
 }

@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
     features = "classpath:features",
     glue = {"com.kms.api"},
-    tags = "@test",
+    tags = "@product",
     plugin = {
       "pretty",
       "html:test-output.html",
@@ -44,7 +44,7 @@ public class Runner {
     jsonFiles.add("target/cucumber-report/cucumber.json");
     Configuration configuration = new Configuration(reportOutputDirectory, "Laptop Bag App");
     configuration.setBuildNumber("0.01");
-    configuration.addClassifications("Environment", "QA");
+    configuration.addClassifications("Environment", "LOCAL");
     configuration.addClassifications("Platform", System.getProperty("os.name").toUpperCase());
     configuration.setSortingMethod(SortingMethod.NATURAL);
     configuration.addPresentationModes(PresentationMode.EXPAND_ALL_STEPS);
